@@ -91,7 +91,7 @@ def Signa(company, filename, coordinate):
             ########################## STAMP ##############################
             x = random.randrange(0, 40, 5)
             y = random.randrange(0, 10, 1)
-            x = y = 0
+            #x = y = 0
             #rect_stamp = fitz.Rect(40 + x, 610 + y, 165 + x, 740 + y)
             rect_stamp = fitz.Rect(
                   coordinate[0] - 110 + x,
@@ -107,8 +107,8 @@ def Signa(company, filename, coordinate):
             pg.insert_image(rect_stamp, stream=stamp, overlay=True)
 
             ########################## SIGNATURE ##########################
-            x1 = random.randrange(0, 40, 5)
-            x2 = random.randrange(0, 20, 2)
+            x = random.randrange(0, 40, 5)
+            #x = random.randrange(0, 20, 2)
             #x1 = x2 = 0
 
             sign = random.choice(signature_list_Tugaleva)
@@ -117,9 +117,9 @@ def Signa(company, filename, coordinate):
             signature = open(signature_path_Tugaleva + '/' + sign, 'rb').read()
             #rect_signature_Tugaleva = fitz.Rect(50 + x2, 610, 120 + x2, 650)
             rect_signature_Tugaleva = fitz.Rect(
-                  coordinate[0] - 100 + x2,
+                  coordinate[0] - 100 + x,
                   coordinate[1] - 10,
-                  coordinate[0] - 30 + x2,
+                  coordinate[0] - 30 + x,
                   coordinate[3] + 20)
 
 
